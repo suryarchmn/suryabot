@@ -177,8 +177,8 @@ def SEND_MESSAGE(op):
                     sendMessage(msg.to, "Current time is" + datetime.datetime.today().strftime('%Y- %H:%M:%S') + "is")
                 if msg.text == "gift":
                     sendMessage(msg.to, text="gift sent", contentMetadata=None, contentType=9)
-                if msg.text == "sur":
-                    sendMessage(msg.to, "apa")
+                if msg.text == ".":
+                    sendMessage(msg.to, ".")
                     try:
                         del wait['readPoint'][msg.to]
                         del wait['readMember'][msg.to]
@@ -189,7 +189,7 @@ def SEND_MESSAGE(op):
                     wait['setTime'][msg.to] = datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
                     wait['ROM'][msg.to] = {}
                     print wait
-                if msg.text == "sider":
+                if msg.text == "sider sur":
                     if msg.to in wait['readPoint']:
                         if wait["ROM"][msg.to].items() == []:
                             chiya = ""
@@ -199,9 +199,9 @@ def SEND_MESSAGE(op):
                                 print rom
                                 chiya += rom[1] + "\n"
 
-                        sendMessage(msg.to, "yg meread %s\n\nyg meread tapi kda muncul\n%s\nBy : suryarchmn\n[%s]"  % (wait['readMember'][msg.to],chiya,setTime[msg.to]))
+                        sendMessage(msg.to, "yang meread: %s\n\nyang meread tapi kada cungul:\n%s\nBy : suryarchmn\n[%s]"  % (wait['readMember'][msg.to],chiya,setTime[msg.to]))
                     else:
-                        sendMessage(msg.to, "ketik sur dulu gasan menandai sider")
+                        sendMessage(msg.to, "ketik . dulu gasan menandai sider")
                 else:
                     pass
         else:
