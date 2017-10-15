@@ -199,7 +199,7 @@ def SEND_MESSAGE(op):
                                 print rom
                                 chiya += rom[1] + "\n"
 
-                        sendMessage(msg.to, "Yang meread: %s\n\nYang meread tapi kada cungul:\n%s\nBy : suryarchmn\n[%s]"  % (wait['readMember'][msg.to],chiya,setTime[msg.to]))
+                        sendMessage(msg.to, "Yang meread :%s\n\nYang meread tapi kada cungul/stiker wara :\n%s\nBy : suryarchmn\n[%s]"  % (wait['readMember'][msg.to],chiya,setTime[msg.to]))
                     else:
                         sendMessage(msg.to, "ketik , dulu gasan menandai sider")
                 else:
