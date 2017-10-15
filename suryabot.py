@@ -45,8 +45,8 @@ def NOTIFIED_READ_MESSAGE(op):
             if Name in wait['readMember'][op.param1]:
                 pass
             else:
-                wait['readMember'][op.param1] += "\n." + Name
-                wait['ROM'][op.param1][op.param2] = "." + Name
+                wait['readMember'][op.param1] += "\n-" + Name
+                wait['ROM'][op.param1][op.param2] = "-" + Name
         else:
             pass
     except:
@@ -174,11 +174,11 @@ def SEND_MESSAGE(op):
                     contact = client.getContact(key)
                     sendMessage(msg.to, ""+contact.displayName+"'s contact")
                 if msg.text == "time":
-                    sendMessage(msg.to, "Current time is" + datetime.datetime.today().strftime('%Y. %H:%M:%S') + "is")
+                    sendMessage(msg.to, "Current time is" + datetime.datetime.today().strftime('%Y- %H:%M:%S') + "is")
                 if msg.text == "gift":
                     sendMessage(msg.to, text="gift sent", contentMetadata=None, contentType=9)
                 if msg.text == "sur":
-                    sendMessage(msg.to, "apa?")
+                    sendMessage(msg.to, "apa")
                     try:
                         del wait['readPoint'][msg.to]
                         del wait['readMember'][msg.to]
@@ -199,7 +199,7 @@ def SEND_MESSAGE(op):
                                 print rom
                                 chiya += rom[1] + "\n"
 
-                        sendMessage(msg.to, "yg meread %s\n-\n\nyg meread tapi kda muncul\n%s-\n\nBy : suryarchmn\n[%s]"  % (wait['readMember'][msg.to],chiya,setTime[msg.to]))
+                        sendMessage(msg.to, "yg meread %s\n\nyg meread tapi kda muncul\n%s\nBy : suryarchmn\n[%s]"  % (wait['readMember'][msg.to],chiya,setTime[msg.to]))
                     else:
                         sendMessage(msg.to, "ketik sur dulu gasan menandai sider")
                 else:
